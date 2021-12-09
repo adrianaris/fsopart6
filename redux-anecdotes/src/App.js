@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { vote, createAnecdote } from './reducers/anecdoteReducer'
+import { vote, createAnecdote, sorted } from './reducers/anecdoteReducer'
 
 const App = () => {
-  const anecdotes = useSelector(state => state)
+  const anecdotes = useSelector(state => sorted(state))
   const dispatch = useDispatch()
   
   const addAnecdote = (event) => {

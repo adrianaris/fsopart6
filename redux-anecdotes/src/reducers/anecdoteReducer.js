@@ -19,6 +19,7 @@ const asObject = (anecdote) => {
 
 const initialState = anecdotesAtStart.map(asObject)
 
+
 const reducer = (state = initialState, action) => {
   console.log('state now: ', state)
   console.log('action', action)
@@ -55,6 +56,10 @@ export const createAnecdote = (content) => {
       id: getId()
     }
   }
+}
+
+export const sorted = (obj) => {
+  return obj.sort((a, b) => (a.votes>b.votes) ? -1 : 1)
 }
 
 export default reducer
