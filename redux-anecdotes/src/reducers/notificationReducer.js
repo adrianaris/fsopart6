@@ -7,7 +7,7 @@ const notificationReducer = (state = null, action) => {
         case 'REMOVE_NOTIFICATION': 
             return null
         default:
-            return state
+            return state 
     }   
 }
 
