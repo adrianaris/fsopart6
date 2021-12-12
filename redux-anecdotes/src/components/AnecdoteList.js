@@ -9,7 +9,7 @@ const AnecdoteList = () => {
     const anecdotes = useSelector(state => sorted(state.anecdotes))
     const filteredAnecdotes = anecdotes.filter(a => a.content.toLowerCase().includes(filter))
     const handleClick = anecdote => {
-      dispatch(vote(anecdote.id))
+      dispatch(vote(anecdote))
       dispatch(notificationOnVote(anecdote))
       setTimeout(() => dispatch(notificationRemove()), 5000)
     }
